@@ -77,7 +77,8 @@ export default function NovoLote() {
         nome: yup.string()
             .required("Nome é obrigatório."),
         quantidade: yup.number()
-            .required("Quantidade é obrigatório."),
+            .required("Quantidade é obrigatório.")
+            .min(0,"Quantidade deve ser maior que 0"),
         dataVendaIni: yup.date()
             .required("Data Inicial é obrigatório."),
         dataVendaFin: yup.date()
@@ -87,7 +88,8 @@ export default function NovoLote() {
         ingresso: yup.string()
             .required("Ingresso é obrigatório"),
         valor: yup.number()
-            .required("Valor é obrigatório."),
+            .required("Valor é obrigatório.")
+            .min(0,"Valor não pode ser negativo"),
     });
 
     const {
